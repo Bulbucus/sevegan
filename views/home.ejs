@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/index.css'/>
+  <link rel='stylesheet' href='/stylesheets/home.css'/>
+  <title>SeVegan</title>
+</head>
+<body>
+
+  <div class="container-logo">
+    <img class='logo' src='images/logo.svg'>
+  </div>
+  <div class="container__orange">
+    <p>Pesquisa que E-numeros são vegan:</p>
+  </div>
+
+  <div class="container__green container-input">
+    <input type='text' name='search' placeholder="Ex: E100">
+    <button>
+      <img src='images/searchicon.svg'>
+    </button>
+  </div>
+
+  <% ingredients.forEach((element) => { %>
+    <% if(element.vegan && !element.talvez_vegan) { %>
+      <div class="container__green results">
+    <%} else if(!element.vegan && !element.talvez_vegan) {%>
+      <div class="container__red results">
+    <% } else if (element.talvez_vegan) { %>
+      <div class="container__orange results">
+    <% } %>
+      <span class="results-ingredient"><%= element.e_number %></span>
+      <% if (element.talvez_vegan) { %>
+        <span class="break-line green"></span>
+      <%} else {%> 
+        <span class="break-line orange"></span>
+      <% } %>
+      <div class='results-info'>
+        <p class="result">
+          <% if(element.vegan && !element.talvez_vegan) { %>
+            Ingrediente Vegan
+          <%} else if(!element.vegan && !element.talvez_vegan) {%>
+            Ingrediente Não Vegan
+          <% } else if (element.talvez_vegan) { %>
+            Ingrediente Talvez Vegan
+          <% } %>
+        </p>
+        <% if(element.name) { %>
+        <p class="result-name"><span>Nome do aditivo:</span> <%= element.name %></p>
+        <% } %>
+      </div>
+    </div>
+  <%})%>
+
+  <footer class="container__orange footer">
+    <p>Made by Emanuel Farinha to Carolina Andrade</p>
+  </footer>
+</body>
+<script src='/javascripts/home.js'></script>
+</html>

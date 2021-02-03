@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap');
+
+$color-background:#F4F2DD;
+$primary-color:#64B045;
+$primary-color-2:#EE9021;
+$secondary-color:#466B33;
+$secondary-color-2:#DE7227;
+$tertiary-color:#EB5757;
+$tertiary-color-2:#954F4F;
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 11px;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: $color-background;
+
+  @media (min-width:630px){
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
