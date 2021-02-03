@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "sass": "sass --watch public/sass:public/stylesheets",
-    "dev": " nodemon app.js"
+    "dev": " nodemon app.js",
+    "start": "cross-env NODE_ENV=production node ./app"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -14,6 +15,7 @@
     "pg": "^8.5.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
     "sass": "^1.32.6"
