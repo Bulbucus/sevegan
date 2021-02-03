@@ -8,8 +8,6 @@ require('dotenv').config()
 
 // router path
 const indexRouter = require('./routes/index');
-const addingredientRouter = require('./routes/addingredient');
-
 
 const app = express();
 
@@ -26,7 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routers
 app.use('/', indexRouter);
-app.use('/addingredient', addingredientRouter);
 
 // error page handler
 app.use((req, res) => {
