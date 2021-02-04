@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const helmet = require('helmet')
 const logger = require('morgan');
 
 // for .env working
@@ -13,7 +12,6 @@ const addingredientRouter = require('./routes/addingredient');
 
 const app = express();
 
-app.use(helmet());
 // view engine setup
 app.set('view engine', 'ejs');
 // para ver os logs no command-line
