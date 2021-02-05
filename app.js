@@ -9,7 +9,6 @@ require('dotenv').config()
 const indexRouter = require('./routes/index');
 const addingredientRouter = require('./routes/addingredient');
 
-
 const app = express();
 
 // view engine setup
@@ -32,6 +31,6 @@ app.use((req, res) => {
   res.send({message: 'Nothing to see were'})
 });
 
-app.listen(8080, () => {
+app.listen(80, () => {
   console.log('server is up')
 })
