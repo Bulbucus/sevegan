@@ -1,6 +1,34 @@
 version: '3.8'
 
 services:
+  sevegan-db:
+    image: postgres:13-alpine
+    volumes: 
+      - postgres-db:/var/lib/postgresql/data
+      - ./sql/insertedvalues.sql:/docker-entrypoint-initdb.d/insertedvalues.sql
+    ports:
+      - 5432:5432
+    environment: 
+      POSTGRES_USER: sevegan
+      POSTGRES_DB: sevegan
+      POSTGRES_PASSWORD: sevegan
+    mem_limit: 300m
   sevegan-web:
     image: node:14.15.5-alpine3.10
+    working_dir: /server
+    volumes: 
+      - ./:/server
+      - node_modules:/server/node_modules
+    ports: 
+      - 8080:8080
     command: sh -c "npm install && npm start"
+    environment: 
+      POSTGRES_USER: sevegan
+      POSTGRES_DB: sevegan
+      POSTGRES_PASSWORD: sevegan
+      POSTGRES_HOST: sevegan-db
+    mem_limit: 300m
+
+volumes:
+  postgres-db:
+  node_modules:

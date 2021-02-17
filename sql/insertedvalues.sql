@@ -1,4 +1,11 @@
 
+CREATE TABLE e_numbers(
+  e_number VARCHAR(5) PRIMARY KEY,
+  vegan BOOLEAN NOT NULL,
+  name VARCHAR(30),
+  talvez_vegan BOOLEAN
+);
+
 INSERT INTO e_numbers (e_number, vegan, name) VALUES ('E100', true , 'Curcumin');
 INSERT INTO e_numbers (e_number, vegan, name) VALUES ('E101', true , 'Riboflavin');
 INSERT INTO e_numbers (e_number, vegan, name) VALUES ('E101a', true , 'Riboflavin-5-Phosphate');
