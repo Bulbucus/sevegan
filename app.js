@@ -21,7 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routers
 app.use('/', indexRouter);
-
 // error page handler
 app.use((req, res) => {
   res.status(404);

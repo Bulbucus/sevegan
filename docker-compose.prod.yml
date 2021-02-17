@@ -1,0 +1,5 @@
+version: '3.8'
+
+services:
+  sevegan-web:
+    command: sh -c "npm install && npm start"
