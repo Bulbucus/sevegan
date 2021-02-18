@@ -34,4 +34,4 @@ e aceder a: ``http://localhost:4040``
 
 ### Proximas implementações:
 
-[ ] - Novo feature em que o utilizador procura por produtos vegan de cada hipermercado.
+- [ ] Novo feature em que o utilizador procura por produtos vegan de cada hipermercado.
