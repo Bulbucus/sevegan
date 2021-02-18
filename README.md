@@ -15,6 +15,7 @@ Back-end:
   PostreSQL (base de dados)
 Front-end:
   EJS
+  SASS
 DevOps:
   Docker
   Nginx
@@ -30,7 +31,7 @@ basta instalar o [docker](https://docs.docker.com/engine/install/) e [docker-com
 docker-compose up -d
 ``
 
-e aceder a: ``http://localhost:4040``
+e aceder a: ``http://localhost:8080``
 
 ### Proximas implementações:
 
